@@ -1,0 +1,60 @@
+.slick-next {
+  position: relative;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(46, 16, 181) !important;
+  font-size: 25px !important;
+  position: absolute;
+}
+.slick-next:before {
+  left: -40px;
+}
+.slick-prev:before {
+  right: -10px;
+  z-index: 99;
+}
+.slider {
+  padding: 3rem 0;
+}
+/* About.css */
+.one {
+  background-color: #c39898;
+}
+.two {
+  background-color: #b3c8cf;
+}
+.three {
+  background-color: #ad88c6;
+}
+.four {
+  background-color: #e6a4b4;
+}
+.five {
+  background-color: #d2e9e9;
+}
+.six {
+  background-color: cadetblue;
+}
+.one h3,
+.two h3,
+.three h3,
+.four h3,
+.five h3,
+.six h3 {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.about_btn {
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  margin-top: 2rem;
+  background-color: #e9c991;
+}
+.about_btn:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+.table,tr,th,td{
+    border: 1px solid black;
+}
+.table tr th,td{
+    text-align: center;
+}
+.class_box{
+    box-shadow: 2px 2px 6px  #133E87;
+}
+@media(max-width:968px){
+    .btn-success{
+        margin-bottom: 0.5rem;
+    }
+}

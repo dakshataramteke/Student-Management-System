@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginPage{
+    /* border:2px solid black; */
+    height : 100vh;
+    background-image: url('../../public//Images/loginBanner.webp');
+}
+.loginPage .row{
+    /* border: 3px solid red; */
+    height: 100%;
+}
+form{
+    /* border: 2px solid green; */
+    padding: 0 !important;
+}
+.loginForm {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+    height: 90%
+}
+.loginForm .login_box{
+    background-color:rgba(255, 250, 205, 0.4);
+    /* opacity: 0.5; */
+}
+.loginForm .login_box input{
+
+ border-radius: 0;
+ border-top-left-radius: 3px;
+ border-top-right-radius: 3px;
+ background: linear-gradient(90deg, #222, #222) left bottom/0 2px no-repeat;
+ background: linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat;
+ background: linear-gradient(90deg, #fafafa, #fafafa) left bottom/100%  no-repeat;
+}
+.loginForm .login_btn{
+    background-color:rgb(46, 16, 181);
+    font-weight: bold;
+    color: white;
+    margin-top: 1.25rem;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+
+
+/* responsive mobile -> 425px  */
+
+@media(max-width:425px){
+    .loginForm{
+        width: 300px;
+    }
+}

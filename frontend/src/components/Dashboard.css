@@ -1,0 +1,256 @@
+:root{
+  --stu:9;
+  --fee:83;
+  --lightgreen: #04fc43;
+  --darkblue: #041d56;
+  --midblue:#1c4e80 
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+#Dashboard{
+  font-family: "Nunito", sans-serif;
+}
+.sidebar {
+  background-color: #1c4e80  !important;
+  color: white;
+  padding-top: 20px;
+  height: 100vh;
+
+}
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+#Dashboard .nav-item {
+  display: flex; 
+  align-items: center; 
+  /* justify-content: center; */
+  margin: 15px 8px;
+  transition: 0.2s all ease-in;
+}
+
+#Dashboard .nav-link {
+  font-size: 18px;
+  color: white;
+}
+
+#Dashboard .nav-link.active {
+  font-weight: bold;
+}
+#Dashboard .nav-link:hover,
+#Dashboard .nav-link:hover.active {
+  color: black;
+}
+
+#Dashboard h1 {
+  color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-item .bi{
+font-size: 1.25rem !important;
+}
+.nav-item:hover{
+  /* padding: 0 5px; */
+  background-color:#b9cce5;
+  color: black;
+  border-radius: 0.75rem;
+}
+.box_data{
+  background-color:var(--midblue);
+  color: white;
+  border-radius: 0.25rem;
+}
+.box_data:hover{
+  text-decoration: underline;
+}
+
+main {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+.StudentForm{
+  margin-top: 1.5rem;
+  width: 100%;
+} 
+.student_btn{
+  background-color: #133E87;
+  color: white;
+}
+.student_btn:hover{
+  background-color:var(--darkblue);
+  color: white;
+}
+
+.dashboard_page{
+  background-color: #b9cce5;
+  margin-top: 0 !important;
+}
+.dashboard_page .title{
+  margin-top: 0.75rem;
+  font-weight: 600;
+ color: var(--darkblue);
+}
+/* Counter Data  */
+.counter_js{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  flex-wrap: wrap;
+  gap: 40px;
+  box-shadow: 1px 2px 8px var(--darkblue),2px 2px 8px var(--darkblue);
+}
+.counter_js .card{
+position: relative;
+width: 200px;
+height: 220px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: none;
+}
+.counter_js .card .percent{
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.counter_js .card .dot{
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+ 
+  
+}
+.counter_js .fee_counter .dot{
+  transform: rotate(calc(3.6deg * var(--fee)));
+  animation: animatefeeDot 2s linear forwards;
+}
+
+.counter_js .student_counter .dot{
+  transform: rotate(calc(3.6deg * var(--stu)));
+  animation: animatestuDot 2s linear forwards;
+}
+
+@keyframes animatefeeDot{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(calc(3.6deg * var(--fee)));
+  }
+}
+
+@keyframes animatestuDot{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(calc(3.6deg * var(--stu)));
+  }
+}
+.counter_js .card .dot::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 72px;
+  width: 10px;
+  height: 10px;
+  background-color:var(--darkblue);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--darkblue), 0 0 30px var(--darkblue);
+}
+.counter_js .card .percent svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+.counter_js .card .percent svg circle{
+  width: 100%;
+  height: 100%;
+  fill:transparent;
+  stroke-width: 2;
+  stroke: var(--darkblue);
+  transform: translate(5px ,5px);
+}
+.counter_js .card .percent svg circle:nth-child(2){
+  stroke-dasharray: 440;
+  /* stroke-dashoffset: calc(440 - (440 * var(--num))/ 100); */
+  opacity: 0;
+  /* animation: fadeIn 1s linear forwards; */
+  /* animation-delay: 2.5s; */
+}
+.counter_js .student_counter .percent svg circle:nth-child(2){
+
+  stroke-dashoffset: calc(440 - (440 * var(--stu))/ 100);
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+.counter_js .fee_counter .percent svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * var(--fee))/ 100);
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.counter_js .card .number{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+.counter_js .card .number h2{
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.counter_js .card .number p{
+  font-weight: 300;
+  font-size: 0.75;
+  line-height: 2px;
+  text-transform: uppercase;
+  color: #133E87;
+}
+/* Media query */
+
+@media (max-width: 767px) {
+  .dashboard_title{
+    font-size: 1em !important;
+    display: none;
+  }
+  .dashboard_page {
+    margin: 2rem 0 0 3rem; 
+  }
+}
+
+@media (max-width: 425px) {
+  #Dashboard .nav-item {
+    margin: 15px 0px;
+  }
+  .dashboard_title{
+    display: none;
+  }
+  .dashboard_page {
+    margin: 2rem 0 0 3.25rem; 
+  }
+}
+
